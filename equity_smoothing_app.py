@@ -15,7 +15,7 @@ st.set_page_config(layout="wide")
     
 #equity = pd.read_excel(r'C:\Users\RafaelOliveira\OneDrive - Brand Delta\Documents\Projects\new_data_science\data_science\data_science\equity_scores\equity_values_green_cuisine_total.xlsx')
 
-json_file = json.load(open(r'.\config_file.json'))
+json_file = json.load(open(r'config_file.json'))
 old_file = json_file["old_tagged_file"]
 new_file = json_file["refreshed_data_file"]
 save_clean_file = json_file["new_tagged_file_path"]
