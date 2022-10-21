@@ -1,0 +1,55 @@
+{
+    "time_periods": ["weekly"],
+    "market": "uk",
+    "index_brands" : {"meat_substitutes": "green_cuisine",
+                      "frozen_food": "Birds_Eye"
+    },
+
+    "brands": {"meat_alternatives": [["green_cuisine", "Quorn", "Linda_McCartney"],
+                                     ["green cuisine", "Quorn", "Linda McCartney"]],
+               "frozen_food":[["Birds_Eye", "Aunt_Bessies", "McCain", "Youngs"],
+                              ["Birds Eye", "Aunt Bessies", "McCain", "Youngs"]]
+    },
+
+    "weights": {"awareness": [0.5, 0.5], 
+                "saliency": [0.5, 0.25, 0.25],
+                "affinity": [0.18478, 0.23277, 0.11820, 0.18251, 0.28174]
+
+    },
+
+    "smoothening": {"filter": "rolling_mean", "window": 8, "order": 4,"degree":0},
+
+    "campaings": [{"name": "PlantAge2022", "start_date": "2022-07-11", "end_date":"2022-09-05"},
+                  {"name": "PlantAge2021", "start_date": "2021-07-11", "end_date":"2021-09-05"},
+                  {"name": "Olympics", "start_date": "2021-07-05", "end_date":"2021-08-30"},
+                  {"name": "Canuary", "start_date": "2021-12-27", "end_date":"2022-01-24"},
+                  {"name": "baseline_PlantAge2022", "start_date": "2022-05-10", "end_date":"2022-07-10"},
+                  {"name": "baseline_Olympics", "start_date": "2021-05-04", "end_date":"2021-07-04"},
+                  {"name": "baseline_Canuary", "start_date": "2021-10-26", "end_date":"2021-12-26"}],
+
+    "models_path": "Brand Delta\\Food Pilot - General\\data\\modelled_data\\uk\\Latest_models",
+
+    "refreshed_data_file": "Brand Delta/Food Pilot - General/data/processed_data/sprinklramazon/market/uk/sprinklramazon.parquet",
+    "google_trends_path": "Brand Delta/Food Pilot - General/data/raw_data/google_trends/markets",
+
+    "old_tagged_file": "Brand Delta/Food Pilot - General/data/modelled_data/uk/archive/English_data_tagged_05_10_2022.parquet",
+    "new_tagged_file_path": "Brand Delta/Food Pilot - General/data/modelled_data/uk/equity_scores_17_10_2022",
+
+    "old_equity_file_path": "Brand Delta/Food Pilot - General/data/modelled_data/uk/equity_scores_14_10_2022",
+    "new_equity_file_path": "Brand Delta/Food Pilot - General/data/modelled_data/uk/RO_tests",
+
+    "data_refresh": 0,
+    "campaings_equity_calculations_only": 0,
+    "periodic_equity_calculations_only": 1,
+
+    "age_cuts": {"All ages": 1,
+                 "18 to 35": 0,
+                 "Lower than 35": 0,
+                 "Higher than 35": 0
+                 },
+
+    "meat_reduction_cuts": {"ignore": 1,
+                            "no meat reduction": 0,
+                            "meat reduction": 0
+                            }
+}
