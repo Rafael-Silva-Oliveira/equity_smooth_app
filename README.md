@@ -1,1 +1,1 @@
-# equity_smooth_app
+# equity_smoothing
