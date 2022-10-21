@@ -1,0 +1,1 @@
+# equity_smooth_app
