@@ -304,40 +304,40 @@ def affinity_spend(equity,brand='green_cuisine'):
 
 try:
     uploaded_files = st.file_uploader('Upload the incomplete equity file',type='xlsx', accept_multiple_files=True)
+
+
+    with st.sidebar:
+        smoothing_filter = st.selectbox("Which smoothing filter would you like to use?",['rolling_mean','savgol','polynomial'])
+
+        window = st.slider("Which window would you like to use?",2,32,1)
+
+        order = st.slider("Which order would you like to use?",2,32,1)
+
+        degree = st.slider("Which degree would you like to use?",2,32,1)
+
+        smoothing_checkbox = st.checkbox("Would you like to plot with smoothing or no smoothing?",value=True)
+
+    option = st.selectbox(
+            'Would you like to use total or averaged equities?',
+            ('Total','Average'))
+
+    if option == "Total":
+        file = [f for f in uploaded_files if "total" in f.name]
+        equity = pd.read_excel(file[0])
+
+    if option == "Average":
+        file = [f for f in uploaded_files if "average" in f.name]
+        equity = pd.read_excel(file[0])
+
+    with st.expander("Click to see dataframe of the {} equities".format(option)):
+        st.dataframe(equity)
+
+    equity_v2 = extra_equity(equity, smoothing_filter,smoothing_checkbox, window,order, degree)
+    with st.expander("Click to see dataframe with the {} framework metrics".format(option)):
+        st.write(equity_v2)
+    affinity_spend(equity_v2,'green_cuisine')
+
 except:
     st.info("Please upload the files first.")
-
-with st.sidebar:
-    smoothing_filter = st.selectbox("Which smoothing filter would you like to use?",['rolling_mean','savgol','polynomial'])
-
-    window = st.slider("Which window would you like to use?",2,32,1)
-
-    order = st.slider("Which order would you like to use?",2,32,1)
-
-    degree = st.slider("Which degree would you like to use?",2,32,1)
-
-    smoothing_checkbox = st.checkbox("Would you like to plot with smoothing or no smoothing?",value=True)
-
-option = st.selectbox(
-        'Would you like to use total or averaged equities?',
-        ('Total','Average'))
-
-if option == "Total":
-    file = [f for f in uploaded_files if "total" in f.name]
-    equity = pd.read_excel(file[0])
-
-if option == "Average":
-    file = [f for f in uploaded_files if "average" in f.name]
-    equity = pd.read_excel(file[0])
-
-with st.expander("Click to see dataframe of the {} equities".format(option)):
-    st.dataframe(equity)
-
-equity_v2 = extra_equity(equity, smoothing_filter,smoothing_checkbox, window,order, degree)
-with st.expander("Click to see dataframe with the {} framework metrics".format(option)):
-    st.write(equity_v2)
-affinity_spend(equity_v2,'green_cuisine')
-
-
 #, "monthly", "quaterly", "yearly", "YTD"
 
