@@ -4,6 +4,7 @@ import pandas as pd
 from datetime import timedelta
 from scipy.signal import savgol_filter
 import streamlit as st
+import openpyxl
 import json
 import plotly.express as px
 import plotly.graph_objects as go
