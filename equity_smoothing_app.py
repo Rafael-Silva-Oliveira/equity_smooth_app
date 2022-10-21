@@ -302,8 +302,7 @@ def affinity_spend(equity,brand='green_cuisine'):
     st.plotly_chart(fig)
 try:
     uploaded_files = st.file_uploader('Upload the incomplete equity file',type='xlsx', accept_multiple_files=True)
-except:
-    st.info("Please upload files first.")
+
 with st.sidebar:
     smoothing_filter = st.selectbox("Which smoothing filter would you like to use?",['rolling_mean','savgol','polynomial'])
 
@@ -339,3 +338,5 @@ st.info("In order to plot the chart, please upload the equity files first")
 
 #, "monthly", "quaterly", "yearly", "YTD"
 
+except:
+    st.info("Please upload files first.")
