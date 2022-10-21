@@ -302,7 +302,10 @@ def affinity_spend(equity,brand='green_cuisine'):
     # fig.add_annotation(x=0.94, y=1.1, xref='paper', yref='paper', text='            Post            ', showarcolumn=False, font=dict(color='blue'), bgcolor='green')
     st.plotly_chart(fig)
 
-uploaded_files = st.file_uploader('Upload the incomplete equity file',type='xlsx', accept_multiple_files=True)
+try:
+    uploaded_files = st.file_uploader('Upload the incomplete equity file',type='xlsx', accept_multiple_files=True)
+except:
+    st.info("Please upload the files first.")
 
 with st.sidebar:
     smoothing_filter = st.selectbox("Which smoothing filter would you like to use?",['rolling_mean','savgol','polynomial'])
