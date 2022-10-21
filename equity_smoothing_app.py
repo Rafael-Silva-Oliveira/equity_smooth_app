@@ -7,9 +7,7 @@ import streamlit as st
 import json
 import plotly.express as px
 import plotly.graph_objects as go
-import base64
 from PIL import Image
-import pendulum
 import plotly.graph_objects as go
 from plotly.subplots import make_subplots
 st.set_page_config(layout="wide")
