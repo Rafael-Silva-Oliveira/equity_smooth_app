@@ -335,7 +335,6 @@ with st.expander("Click to see dataframe with the {} framework metrics".format(o
     st.write(equity_v2)
 affinity_spend(equity_v2,'green_cuisine')
 
-st.info("In order to plot the chart, please upload the equity files first")
 
 #, "monthly", "quaterly", "yearly", "YTD"
 
