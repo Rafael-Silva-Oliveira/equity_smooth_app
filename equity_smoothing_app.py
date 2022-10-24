@@ -12,7 +12,8 @@ from PIL import Image
 import plotly.graph_objects as go
 from plotly.subplots import make_subplots
 st.set_page_config(layout="wide")
-
+import hydralit_components as hc
+hc.hydralit_experimental(True)
     
 #equity = pd.read_excel(r'C:\Users\RafaelOliveira\OneDrive - Brand Delta\Documents\Projects\new_data_science\data_science\data_science\equity_scores\equity_values_green_cuisine_total.xlsx')
 
