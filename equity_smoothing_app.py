@@ -341,3 +341,55 @@ except:
     st.info("Please upload the files first.")
 #, "monthly", "quaterly", "yearly", "YTD"
 
+modal_code = """
+
+<style>
+  .btn btn-primary {
+    background-color: #31b0d5;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 4px;
+    border-color: #46b8da;
+  }
+
+  #button {
+    position: fixed;
+    bottom: -4px;
+    right: 10px;
+  }
+  .modal-title {
+    color: black;
+  }
+</style>
+
+<!-- Button trigger modal -->
+<button type="button" id = "button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+  Info
+</button>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel"> Legend for charts and tables: </h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <code> Smoothing filter "rolling_mean" - Only the "window" parameter is used. </code> <br>
+        <br>
+        <code> Smoothing filter "savgol" - Both "window" and "order" can be used. Order needs to be lesser than window. </code> <br>
+        <br>
+        <code> Smoothing filter "polinomial" - Both "window" and "degree" can be used. </code> <br>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+"""
+
+st.markdown(modal_code,unsafe_allow_html=True)
